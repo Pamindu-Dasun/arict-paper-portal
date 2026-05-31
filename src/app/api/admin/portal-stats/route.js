@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 import {
   getPortalStatsForAdmin,
@@ -33,6 +34,7 @@ export async function PUT(request) {
     }
 
     await setActiveStudentsCount(activeStudentsCount);
+    revalidatePath("/about");
     const updated = await getPortalStatsForAdmin();
 
     return NextResponse.json({ stats: updated });
