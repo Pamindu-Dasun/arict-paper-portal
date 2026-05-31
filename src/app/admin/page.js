@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import StatsCard from "@/components/admin/StatsCard";
+import PortalStatsPanel from "@/components/admin/PortalStatsPanel";
 import PapersTable from "@/components/admin/PapersTable";
 import {
   fetchAllPapers,
@@ -103,30 +104,19 @@ export default function AdminDashboardPage() {
         />
       </div>
 
-      <div className="admin-panel-grid">
-        <div className="card admin-panel">
-          <div className="admin-panel-header">
-            <h2 className="text-headline-sm">Papers by Department</h2>
-          </div>
-          <div className="admin-dept-stats">
-            {departmentStats.map((dept) => (
-              <div key={dept.name} className="admin-dept-stat-row">
-                <span>{dept.name}</span>
-                <strong>{loading ? "—" : dept.paperCount}</strong>
-              </div>
-            ))}
-          </div>
-        </div>
+      <PortalStatsPanel />
 
-        <div className="card admin-panel admin-panel--coming-soon">
-          <div className="admin-panel-header">
-            <h2 className="text-headline-sm">Coming Soon</h2>
-          </div>
-          <ul className="admin-coming-list">
-            <li>Analytics and usage stats</li>
-            <li>Bulk paper import</li>
-            <li>Admin user management</li>
-          </ul>
+      <div className="card admin-panel">
+        <div className="admin-panel-header">
+          <h2 className="text-headline-sm">Papers by Department</h2>
+        </div>
+        <div className="admin-dept-stats">
+          {departmentStats.map((dept) => (
+            <div key={dept.name} className="admin-dept-stat-row">
+              <span>{dept.name}</span>
+              <strong>{loading ? "—" : dept.paperCount}</strong>
+            </div>
+          ))}
         </div>
       </div>
 
