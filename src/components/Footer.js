@@ -1,8 +1,39 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Linkedin, Github, Instagram } from "lucide-react";
+import { Linkedin, Facebook, Github, Youtube } from "lucide-react";
+
+const SOCIAL_LINKS = [
+  {
+    href: "https://www.linkedin.com",
+    label: "LinkedIn",
+    className: "social-linkedin",
+    Icon: Linkedin,
+  },
+  {
+    href: "https://www.facebook.com",
+    label: "Facebook",
+    className: "social-facebook",
+    Icon: Facebook,
+  },
+  {
+    href: "https://github.com",
+    label: "GitHub",
+    className: "social-github",
+    Icon: Github,
+  },
+  {
+    href: "https://www.youtube.com",
+    label: "YouTube",
+    className: "social-youtube",
+    Icon: Youtube,
+  },
+];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer" id="main-footer">
       <div className="footer-inner container">
@@ -21,42 +52,18 @@ export default function Footer() {
               Crafting digital experiences that move people forward.
             </p>
             <div className="footer-social">
-              <a
-                href="https://twitter.com"
-                aria-label="Twitter"
-                target="_blank"
-                rel="noreferrer"
-                className="social-twitter"
-              >
-                <Twitter size={18} aria-hidden="true" />
-              </a>
-              <a
-                href="https://www.linkedin.com"
-                aria-label="LinkedIn"
-                target="_blank"
-                rel="noreferrer"
-                className="social-linkedin"
-              >
-                <Linkedin size={18} aria-hidden="true" />
-              </a>
-              <a
-                href="https://github.com"
-                aria-label="GitHub"
-                target="_blank"
-                rel="noreferrer"
-                className="social-github"
-              >
-                <Github size={18} aria-hidden="true" />
-              </a>
-              <a
-                href="https://instagram.com"
-                aria-label="Instagram"
-                target="_blank"
-                rel="noreferrer"
-                className="social-instagram"
-              >
-                <Instagram size={18} aria-hidden="true" />
-              </a>
+              {SOCIAL_LINKS.map(({ href, label, className, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={className}
+                >
+                  <Icon size={18} aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -102,7 +109,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span className="footer-bottom-copy">
-            © 2024 Association of Rajarata Information &amp; Communication
+            © {currentYear} Association of Rajarata Information &amp; Communication
             Technology. All rights reserved.
           </span>
           <div className="footer-bottom-links">

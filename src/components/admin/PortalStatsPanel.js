@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import StatsCard from "@/components/admin/StatsCard";
+import { formatActiveStudentsDisplay } from "@/lib/formatStats";
 
 function formatStat(value) {
   if (value === null || value === undefined) return "—";
@@ -109,7 +110,9 @@ export default function PortalStatsPanel() {
         <StatsCard
           icon="groups"
           label="Active Students (live)"
-          value={loading ? "—" : formatStat(stats?.activeStudentsDisplayed)}
+          value={
+            loading ? "—" : formatActiveStudentsDisplay(stats?.activeStudentsDisplayed)
+          }
           hint={
             stats?.activeStudentsSource === "env"
               ? "Using ACTIVE_STUDENTS_COUNT env"
