@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from "next/cache";
 import { DEPARTMENT_NAMES } from "@/lib/constants";
 import { ensureSchema, query } from "@/lib/server/db";
 
@@ -65,6 +66,7 @@ export async function getPortalStatsForAdmin() {
 }
 
 export async function getAboutStats() {
+  noStore();
   await ensureSchema();
 
   const [papersResult, subjectsResult, departmentsResult] = await Promise.all([

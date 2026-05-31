@@ -1,5 +1,8 @@
 import { getAboutStats } from "@/lib/server/aboutStats";
 
+// Always read fresh stats from Neon (admin updates must show without redeploy)
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "About Us | ARICT Past Paper Portal",
   description:
