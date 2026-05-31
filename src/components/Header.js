@@ -9,7 +9,8 @@ import RequestPaperModal from "@/components/RequestPaperModal";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/search", label: "Papers" },
-  { href: "/faculty", label: "Faculty" },
+  // Temporarily hidden — uncomment to restore Faculty in navigation
+  // { href: "/faculty", label: "Faculty" },
   { href: "/about", label: "About Us" },
 ];
 

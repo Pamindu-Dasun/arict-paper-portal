@@ -64,5 +64,13 @@ export async function ensureSchema() {
     CREATE INDEX IF NOT EXISTS idx_papers_exam_period ON papers(exam_period);
   `);
 
+  await query(`
+    CREATE TABLE IF NOT EXISTS portal_settings (
+      key TEXT PRIMARY KEY,
+      value TEXT NOT NULL,
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+  `);
+
   initialized = true;
 }
