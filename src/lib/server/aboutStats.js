@@ -1,5 +1,6 @@
 import { unstable_noStore as noStore } from "next/cache";
 import { DEPARTMENT_NAMES } from "@/lib/constants";
+import { formatActiveStudentsDisplay } from "@/lib/formatStats";
 import { ensureSchema, query } from "@/lib/server/db";
 
 function formatCount(value) {
@@ -94,7 +95,7 @@ export async function getAboutStats() {
         label: "Departments",
       },
       {
-        number: activeStudents !== null ? formatCount(activeStudents) : "—",
+        number: formatActiveStudentsDisplay(activeStudents),
         label: "Active Students",
       },
     ],
