@@ -1200,25 +1200,6 @@ ol {
   color: var(--color-secondary);
 }
 
-.dept-card-footer {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  padding-top: 4px;
-  color: var(--color-secondary);
-}
-
-.dept-card-footer-icon {
-  width: 28px;
-  height: 28px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--color-surface-container);
-  border: 1px solid var(--color-outline-variant);
-}
-
 /* --- Examination Period Section --- */
 .exam-period-section {
   padding: var(--space-lg) 0 var(--space-md);
