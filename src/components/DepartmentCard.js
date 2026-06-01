@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FileText, BookOpen, Users } from "lucide-react";
 
 export default function DepartmentCard({ department, index, loading = false }) {
   const isFirst = index === 0;
@@ -53,18 +52,6 @@ export default function DepartmentCard({ department, index, loading = false }) {
             </span>
             <span className="dept-card-stat-label">Resources</span>
           </div>
-        </div>
-
-        <div className="dept-card-footer" aria-hidden="true">
-          <span className="dept-card-footer-icon">
-            <FileText size={16} />
-          </span>
-          <span className="dept-card-footer-icon">
-            <BookOpen size={16} />
-          </span>
-          <span className="dept-card-footer-icon">
-            <Users size={16} />
-          </span>
         </div>
       </div>
     </Link>

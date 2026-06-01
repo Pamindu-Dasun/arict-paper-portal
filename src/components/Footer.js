@@ -109,8 +109,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span className="footer-bottom-copy">
-            © {currentYear} Association of Rajarata Information &amp; Communication
-            Technology. All rights reserved.
+            {`© ${currentYear} Association of Rajarata Information & Communication Technology. All rights reserved.`}
           </span>
           <div className="footer-bottom-links">
             <Link href="/about">Privacy</Link>
